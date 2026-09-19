@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ J-Engineer | Cyber Resistor Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cyber-container">
+    <div class="glow-overlay"></div>
+    <header>
+        <span class="badge">ROBOTOTEXNIKA PRO v2.0</span>
+        <h1>CYBER RESISTOR LAB</h1>
+        <p class="subtitle">By Jamshidbek Muxandis</p>
+    </header>
+
+    <!-- Ultra-Realistic 3D Resistor Component -->
+    <div class="resistor-wrapper">
+        <div class="metal-wire wire-left"></div>
+        <div class="resistor-core">
+            <div id="b1" class="neon-band"></div>
+            <div id="b2" class="neon-band"></div>
+            <div id="b3" class="neon-band"></div>
+            <div id="b4" class="neon-band tolerance-band"></div>
+        </div>
+        <div class="metal-wire wire-right"></div>
+    </div>
+
+    <!-- Control Laboratory Panel -->
+    <div class="control-panel">
+        <div class="input-card">
+            <label><span class="num-dot">1</span> 1-Halqa (Raqam)</label>
+            <select id="band1" onchange="hisoblaVaChaliq()">
+                <option value="0" class="bg-black">Qora (0)</option>
+                <option value="1" class="bg-brown">Jigarrang (1)</option>
+                <option value="2" class="bg-red" selected>Qizil (2)</option>
+                <option value="3" class="bg-orange">Olovrang (3)</option>
+                <option value="4" class="bg-yellow">Sariq (4)</option>
+                <option value="5" class="bg-green">Yashil (5)</option>
+                <option value="6" class="bg-blue">Ko'k (6)</option>
+                <option value="7" class="bg-violet">Binafsha (7)</option>
+                <option value="8" class="bg-grey">Kulrang (8)</option>
+                <option value="9" class="bg-white">Oq (9)</option>
+            </select>
+        </div>
+
+        <div class="input-card">
+            <label><span class="num-dot">2</span> 2-Halqa (Raqam)</label>
+            <select id="band2" onchange="hisoblaVaChaliq()">
+                <option value="0" class="bg-black">Qora (0)</option>
+                <option value="1" class="bg-brown">Jigarrang (1)</option>
+                <option value="2" class="bg-red">Qizil (2)</option>
+                <option value="3" class="bg-orange" selected>Olovrang (3)</option>
+                <option value="4" class="bg-yellow">Sariq (4)</option>
+                <option value="5" class="bg-green">Yashil (5)</option>
+                <option value="6" class="bg-blue">Ko'k (6)</option>
+                <option value="7" class="bg-violet">Binafsha (7)</option>
+                <option value="8" class="bg-grey">Kulrang (8)</option>
+                <option value="9" class="bg-white">Oq (9)</option>
+            </select>
+        </div>
+
+        <div class="input-card">
+            <label><span class="num-dot">3</span> 3-Halqa (Ko'paytiruvchi)</label>
+            <select id="band3" onchange="hisoblaVaChaliq()">
+                <option value="1" class="bg-black">Qora (x1 Ω)</option>
+                <option value="10" class="bg-brown">Jigarrang (x10 Ω)</option>
+                <option value="100" class="bg-red">Qizil (x100 Ω)</option>
+                <option value="1000" class="bg-orange">Olovrang (x1 kΩ)</option>
+                <option value="10000" class="bg-yellow">Sariq (x10 kΩ)</option>
+                <option value="100000" class="bg-green">Yashil (x100 kΩ)</option>
+                <option value="1000000" class="bg-blue" selected>Ko'k (x1 MΩ)</option>
+                <option value="10000000" class="bg-violet">Binafsha (x10 MΩ)</option>
+            </select>
+        </div>
+
+        <div class="input-card">
+            <label><span class="num-dot">4</span> 4-Halqa (Aniqlik)</label>
+            <select id="band4" onchange="hisoblaVaChaliq()">
+                <option value="±5%" class="bg-gold">Tilla (±5%)</option>
+                <option value="±10%" class="bg-silver" selected>Kumush (±10%)</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Smart Interactive Output Display -->
+    <div class="display-box" id="displayBox" onclick="nusxaOling()" title="Nusxalash uchun bosing">
+        <div class="display-glow"></div>
+        <p class="display-title">LABORATORIYA NATIJASI</p>
+        <div class="display-value" id="result">23 MΩ ±10%</div>
+        <p class="copy-hint" id="copyHint">Nusxalash uchun ustiga bosing 📋</p>
+    </div>
+
+    <!-- Premium Cyber Social Footers -->
+    <footer class="social-hub">
+        <a href="https://t.me/jamwidbek_official" target="_blank" class="cyber-btn btn-tg">
+            <span class="icon">✈️</span> Telegram Blog
+        </a>
+        <a href="https://www.instagram.com/jamshidbek_org?stkn=MWI4bXp0d3JsN2d4Zg==" target="_blank" class="cyber-btn btn-insta">
+            <span class="icon">📸</span> Instagram
+        </a>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
