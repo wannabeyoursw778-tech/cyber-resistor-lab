@@ -23,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 30px;
+    padding: 15px;
     overflow-x: hidden;
 }
 
@@ -33,18 +33,22 @@ body {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
-    padding: 40px;
+    padding: 30px 20px;
     width: 100%;
-    max-width: 600px;
+    max-width: 550px;
     position: relative;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.1);
 }
 
+header {
+    margin-bottom: 20px;
+}
+
 header h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 900;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -59,13 +63,14 @@ header h1 {
     font-weight: bold;
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
 .subtitle {
-    font-size: 16px;
+    font-size: 15px;
     color: #94a3b8;
     margin-top: 5px;
-    letter-spacing: 1px;
 }
 
 /* Cyber 3D Resistor Model */
@@ -73,31 +78,32 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 45px 0;
+    margin: 30px 0;
+    width: 100%;
 }
 
 .metal-wire {
-    width: 70px;
+    width: 20%;
     height: 5px;
     background: linear-gradient(to bottom, #cbd5e1, #64748b, #94a3b8);
     box-shadow: 0 4px 10px rgba(0, 242, 254, 0.2);
 }
 
 .resistor-core {
-    width: 250px;
-    height: 70px;
+    width: 60%;
+    height: 65px;
     background: linear-gradient(to bottom, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%);
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 20px;
     position: relative;
     box-shadow: inset 0 5px 8px rgba(255,255,255,0.6), inset 0 -5px 8px rgba(0,0,0,0.2), 0 10px 25px rgba(0,0,0,0.4);
 }
 
 .neon-band {
-    width: 16px;
+    width: 14px;
     height: 100%;
     background-color: #475569;
     z-index: 5;
@@ -111,88 +117,72 @@ header h1 {
 
 @keyframes neonGlowPulse {
     0% { transform: scaleX(1); filter: brightness(1); }
-    50% { transform: scaleX(1.3); filter: brightness(1.8); }
+    50% { transform: scaleX(1.2); filter: brightness(1.6); }
     100% { transform: scaleX(1); filter: brightness(1); }
 }
 
-.tolerance-band { margin-left: 25px; }
-
-/* Control Laboratory Panel */
+/* Control Panel */
 .control-panel {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
 .input-card {
     background: rgba(30, 41, 59, 0.4);
     border: 1px solid rgba(255,255,255,0.05);
-    padding: 15px;
-    border-radius: 14px;
+    padding: 12px;
+    border-radius: 12px;
     text-align: left;
 }
 
 .input-card label {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 14px;
+    gap: 6px;
+    font-size: 13px;
     font-weight: 600;
     color: #94a3b8;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .num-dot {
     background: var(--neon-blue);
     color: var(--cyber-dark);
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: bold;
 }
 
 select {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background: #0f172a;
     border: 1px solid rgba(255,255,255,0.1);
     color: #f8fafc;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     outline: none;
-    transition: 0.3s;
-}
-
-select:focus {
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
 select option { font-weight: bold; padding: 10px; }
 
-/* Smart Interactive Output Display */
+/* Display Box */
 .display-box {
     background: linear-gradient(135deg, rgba(0, 242, 254, 0.05), rgba(79, 172, 254, 0.05));
     border: 1px solid rgba(0, 242, 254, 0.2);
     border-radius: 16px;
-    padding: 25px;
+    padding: 20px;
     position: relative;
     cursor: pointer;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.display-box:hover {
-    border-color: var(--neon-cyan);
-    background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(79, 172, 254, 0.1));
-    transform: translateY(-2px);
 }
 
 .display-box.pulse-update {
@@ -200,71 +190,85 @@ select option { font-weight: bold; padding: 10px; }
 }
 
 @keyframes flashDisplay {
-    0% { border-color: var(--neon-green); box-shadow: 0 0 20px rgba(0, 255, 135, 0.4); }
+    0% { border-color: var(--neon-green); box-shadow: 0 0 15px rgba(0, 255, 135, 0.3); }
     100% { border-color: rgba(0, 242, 254, 0.2); box-shadow: none; }
 }
 
 .display-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 11px;
+    letter-spacing: 1px;
     color: var(--neon-cyan);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .display-value {
     font-family: 'Orbitron', sans-serif;
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--neon-green);
-    text-shadow: 0 0 15px rgba(0, 255, 135, 0.5);
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.4);
 }
 
 .copy-hint {
-    font-size: 12px;
+    font-size: 11px;
     color: #64748b;
-    margin-top: 8px;
+    margin-top: 6px;
 }
 
-/* Premium Buttons */
+/* Social Buttons */
 .social-hub {
-    margin-top: 35px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     border-top: 1px dashed rgba(255,255,255,0.1);
-    padding-top: 25px;
+    padding-top: 20px;
 }
 
 .cyber-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 28px;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
     border-radius: 50px;
     text-decoration: none;
     color: white;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Orbitron', sans-serif;
-    letter-spacing: 1px;
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 48%;
+    transition: 0.3s;
 }
 
-.btn-tg {
-    background: linear-gradient(135deg, #0088cc, #005580);
-    box-shadow: 0 0 15px rgba(0, 136, 204, 0.3);
-    border: 1px solid rgba(0, 136, 204, 0.5);
-}
+.btn-tg { background: linear-gradient(135deg, #0088cc, #005580); }
+.btn-insta { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
 
-.btn-insta {
-    background: linear-gradient(135deg, #f09433, #dc2743, #bc1888);
-    box-shadow: 0 0 15px rgba(220, 39, 67, 0.3);
-    border: 1px solid rgba(220, 39, 67, 0.5);
-}
-
-.cyber-btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    filter: brightness(1.2);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+/* ==========================================================
+   SMARTPHONE EKRANLARI UCHUN (MOBILE ADAPTATION)
+   ========================================================== */
+@media (max-width: 480px) {
+    .cyber-container {
+        padding: 20px 15px;
+    }
+    header h1 {
+        font-size: 20px;
+    }
+    .resistor-core {
+        height: 55px;
+    }
+    .control-panel {
+        grid-template-columns: 1fr; /* Tugmalar tikka ketma-ket bo'ladi */
+        gap: 10px;
+    }
+    .display-value {
+        font-size: 22px;
+    }
+    .social-hub {
+        flex-direction: column; /* Telegram va Insta tugmasi tikka bo'ladi */
+    }
+    .cyber-btn {
+        width: 100%;
+    }
 }
